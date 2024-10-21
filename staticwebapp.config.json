@@ -33,7 +33,7 @@
     {
       "route": "/buildapps",
       "redirect": "/index.html",
-      "statusCode": 200
+      "statusCode": 301
     }
   ],
   "globalHeaders": {
