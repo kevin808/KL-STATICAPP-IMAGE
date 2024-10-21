@@ -1,5 +1,45 @@
 {
-    "platform": {
+  "platform": {
     "apiRuntime": "node:18"
+  },
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  },
+  "routes": [
+    {
+      "route": "*.js",
+      "headers": {
+        "Cache-Control": "public, max-age=172800"
+      }
+    },
+    {
+      "route": "*.{svg,png,jpg,gif,json}",
+      "headers": {
+        "Cache-Control": "no-cache"
+      }
+    },
+    {
+      "route": "/.auth/login/twitter",
+      "statusCode": 404
+    },
+    {
+      "route": "/.auth/login/aad",
+      "statusCode": 404
+    },
+    {
+      "route": "/.auth/login/github",
+      "statusCode": 404
+    },
+    {
+      "route": "/buildapps",
+      "redirect": "/index.html",
+      "statusCode": 200
     }
+  ],
+  "globalHeaders": {
+    "Cache-Control": "private, no-cache"
+  },
+  "mimeTypes": {
+    ".js": "text/javascript"
+  }    
 }
